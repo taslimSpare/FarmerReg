@@ -1,7 +1,8 @@
-package com.amazon.app.farmerreg
+package com.amazon.app.farmerreg.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.amazon.app.farmerreg.R
 
 class MainActivity : AppCompatActivity() {
 
