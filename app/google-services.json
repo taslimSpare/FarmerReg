@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "804722445641",
+    "firebase_url": "https://farmerreg-1d0a8.firebaseio.com",
+    "project_id": "farmerreg-1d0a8",
+    "storage_bucket": "farmerreg-1d0a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804722445641:android:3c9f0cd3d3ff4b8bd15e98",
+        "android_client_info": {
+          "package_name": "com.amazon.app.farmerreg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "804722445641-ie303cmgtdmdqifl1f0dtp3h6em165b8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amazon.app.farmerreg",
+            "certificate_hash": "0d80d0dcd2a101512a58e5ae0ff5ae678f82d70b"
+          }
+        },
+        {
+          "client_id": "804722445641-g28bcquj2qdclgk662mc9dml24bemipj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRQEJCGa_e5lAi2BigSnTneNdTmPO_Alw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "804722445641-g28bcquj2qdclgk662mc9dml24bemipj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
