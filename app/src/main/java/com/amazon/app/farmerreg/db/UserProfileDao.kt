@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.amazon.app.farmerreg.pojo.UserProfile
+import com.amazon.app.farmerreg.db.pojo.UserProfile
 
 
 @Dao

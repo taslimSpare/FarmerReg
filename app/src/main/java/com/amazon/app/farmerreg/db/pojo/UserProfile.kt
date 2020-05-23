@@ -1,4 +1,4 @@
-package com.amazon.app.farmerreg.pojo
+package com.amazon.app.farmerreg.db.pojo
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
