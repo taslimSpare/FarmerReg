@@ -7,7 +7,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_dark_green">
+        android:background="@color/app_white">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:id="@+id/v_tbar"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ImageView
@@ -17,22 +23,212 @@
             android:src="@drawable/farmer"
             android:layout_margin="15dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/v_tbar"
+            app:layout_constraintBottom_toBottomOf="@id/v_tbar" />
 
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="80dp"
+            android:src="@drawable/tree"
+            app:layout_constraintTop_toBottomOf="@+id/cl_big_circle"
+            app:layout_constraintBottom_toTopOf="@+id/first" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3"
-            android:textSize="40sp"
-            android:textStyle="bold"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/cl_big_circle"
             android:background="@drawable/ic_almost_circle"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iv_farmer" />
+            app:layout_constraintTop_toBottomOf="@+id/v_tbar">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:id="@+id/tv_number_of_farmers"
+                android:gravity="end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_farms"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="farms"
+                android:id="@+id/tv_farms"
+                android:gravity="start|bottom"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toEndOf="@+id/tv_number_of_farmers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_number_of_farmers"
+                app:layout_constraintBottom_toBottomOf="@id/tv_number_of_farmers" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/third"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Latest news"
+            android:textColor="@color/app_black"
+            android:gravity="center"
+            android:background="@drawable/home_selections_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fourth"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/tv_latest_news"
+                android:text="Latest news"
+                android:textSize="18sp"
+                android:gravity="center|top"
+                android:textColor="@color/app_black"
+                app:layout_constraintTop_toBottomOf="@+id/iv_news"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                android:id="@+id/iv_news"
+                android:src="@drawable/tv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_latest_news"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/fourth"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/app_black"
+            android:gravity="center"
+            android:background="@drawable/home_selections_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/third"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/tv_support"
+                android:text="Support"
+                android:textSize="18sp"
+                android:gravity="center|top"
+                android:textColor="@color/app_black"
+                app:layout_constraintTop_toBottomOf="@+id/iv_support"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="13dp"
+                android:id="@+id/iv_support"
+                android:src="@drawable/support"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_support"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/first"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:drawableTop="@drawable/add"
+            android:text="Add new farmer"
+            android:textColor="@color/app_black"
+            android:gravity="center"
+            android:background="@drawable/home_selections_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/second"
+            app:layout_constraintBottom_toTopOf="@+id/third">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/tv_add_new_farmer"
+                android:text="Add new farmer"
+                android:textSize="18sp"
+                android:gravity="center|top"
+                android:textColor="@color/app_black"
+                app:layout_constraintTop_toBottomOf="@+id/iv_add_new"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                android:id="@+id/iv_add_new"
+                android:src="@drawable/add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_add_new_farmer"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:id="@+id/second"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:drawableTop="@drawable/add"
+            android:text="Add new farmer"
+            android:textColor="@color/app_black"
+            android:gravity="center"
+            android:background="@drawable/home_selections_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/first"
+            app:layout_constraintBottom_toTopOf="@+id/fourth">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/tv_my_farmers"
+                android:text="My farmers"
+                android:textSize="18sp"
+                android:gravity="center|top"
+                android:textColor="@color/app_black"
+                app:layout_constraintTop_toBottomOf="@+id/iv_my_farmers"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                android:id="@+id/iv_my_farmers"
+                android:src="@drawable/people"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tv_my_farmers"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
