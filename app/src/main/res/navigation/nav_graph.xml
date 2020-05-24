@@ -53,6 +53,9 @@
         <action
             android:id="@+id/action_homeFragment_to_allFarmersFragment"
             app:destination="@id/allFarmersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addNewFarmerFragment"
+            app:destination="@id/addNewFarmerFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboarderProfileFragment"
@@ -71,6 +74,11 @@
         android:name="com.amazon.app.farmerreg.view.fragments.AllFarmersFragment"
         android:label="fragment_all_farmers"
         tools:layout="@layout/fragment_all_farmers" />
+    <fragment
+        android:id="@+id/addNewFarmerFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFragment"
+        android:label="fragment_add_new_farmer"
+        tools:layout="@layout/fragment_add_new_farmer" />
 
 
 </navigation>
