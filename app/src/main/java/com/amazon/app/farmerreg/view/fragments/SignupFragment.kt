@@ -1,7 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package com.amazon.app.farmerreg.view.fragments
 
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,9 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-
 import com.amazon.app.farmerreg.R
-import com.amazon.app.farmerreg.databinding.FragmentLoginBinding
 import com.amazon.app.farmerreg.databinding.FragmentSignupBinding
 import com.amazon.app.farmerreg.helper.Constants
 import com.amazon.app.farmerreg.helper.Utils
@@ -83,14 +82,14 @@ class SignupFragment : Fragment() {
 
 
 
-    fun showProgressBar() {
+    private fun showProgressBar() {
         fragmentSignupBinding.etName.isEnabled = false
         fragmentSignupBinding.etEmail.isEnabled = false
         fragmentSignupBinding.etPassword.isEnabled = false
         fragmentSignupBinding.progressView.loadingContainer.visibility = View.VISIBLE
     }
 
-    fun hideProgressBar(error: String) {
+    private fun hideProgressBar(error: String) {
         fragmentSignupBinding.etEmail.isEnabled = true
         fragmentSignupBinding.etPassword.isEnabled = true
         fragmentSignupBinding.progressView.loadingContainer.visibility = View.GONE

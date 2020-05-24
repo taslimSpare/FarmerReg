@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.amazon.app.farmerreg.view.fragments
 
 
@@ -19,6 +21,7 @@ import com.amazon.app.farmerreg.R
 import com.amazon.app.farmerreg.databinding.FragmentLoginBinding
 import com.amazon.app.farmerreg.helper.Constants
 import com.amazon.app.farmerreg.helper.Utils
+import com.amazon.app.farmerreg.view.ExitActivity
 import com.amazon.app.farmerreg.view.viewmodel.AuthVM
 
 /**
@@ -41,7 +44,7 @@ class LoginFragment : Fragment() {
         // onBackPressed
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                // todo: Exit App
+                ExitActivity().exit(activity!!.applicationContext)
             }
         })
 
@@ -79,13 +82,13 @@ class LoginFragment : Fragment() {
 
 
 
-    fun showProgressBar() {
+    private fun showProgressBar() {
         fragmentLoginBinding.etEmail.isEnabled = false
         fragmentLoginBinding.etPassword.isEnabled = false
         fragmentLoginBinding.progressView.loadingContainer.visibility = View.VISIBLE
     }
 
-    fun hideProgressBar(error: String) {
+    private fun hideProgressBar(error: String) {
         fragmentLoginBinding.etEmail.isEnabled = true
         fragmentLoginBinding.etPassword.isEnabled = true
         fragmentLoginBinding.progressView.loadingContainer.visibility = View.GONE
