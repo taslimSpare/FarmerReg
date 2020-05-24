@@ -10,12 +10,14 @@ import androidx.navigation.Navigation
 import com.amazon.app.farmerreg.R
 import com.amazon.app.farmerreg.databinding.ActivityMainBinding
 import com.amazon.app.farmerreg.view.viewmodel.AuthVM
+import com.amazon.app.farmerreg.view.viewmodel.OnboarderVM
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var navController: NavController
     lateinit var activityMainBinding: ActivityMainBinding
     private lateinit var authVM: AuthVM
+    private lateinit var onboarderVM: OnboarderVM
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.container)
 
         authVM = ViewModelProviders.of(this as FragmentActivity).get(AuthVM::class.java)
+        onboarderVM = ViewModelProviders.of(this as FragmentActivity).get(OnboarderVM::class.java)
 
     }
 }

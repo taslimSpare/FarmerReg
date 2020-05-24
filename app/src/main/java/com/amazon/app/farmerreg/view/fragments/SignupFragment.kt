@@ -57,7 +57,7 @@ class SignupFragment : Fragment() {
         fragmentSignupBinding.btnSignUp.setOnClickListener {
             if(!(Utils().errorfy(fragmentSignupBinding.etName, fragmentSignupBinding.etEmail, fragmentSignupBinding.etPassword))) {
                 showProgressBar()
-                authVM.signUp(UserProfile(0, fragmentSignupBinding.etName.text.toString().trim(), fragmentSignupBinding.etEmail.text.toString().trim()), fragmentSignupBinding.etPassword.text.toString().trim())
+                authVM.signUp(UserProfile(0, fragmentSignupBinding.etName.text.toString().trim(), fragmentSignupBinding.etEmail.text.toString().trim(), 0), fragmentSignupBinding.etPassword.text.toString().trim())
                 observe()
             }
         }

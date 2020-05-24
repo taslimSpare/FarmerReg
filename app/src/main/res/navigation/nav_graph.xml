@@ -46,7 +46,39 @@
         android:id="@+id/homeFragment"
         android:name="com.amazon.app.farmerreg.view.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_onboarderProfileFragment"
+            app:destination="@id/onboarderProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allFarmersFragment"
+            app:destination="@id/allFarmersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addNewFarmerFragment"
+            app:destination="@id/addNewFarmerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onboarderProfileFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.OnboarderProfileFragment"
+        android:label="fragment_onboarder_profile"
+        tools:layout="@layout/fragment_onboarder_profile" >
+        <action
+            android:id="@+id/action_onboarderProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onboarderProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/allFarmersFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AllFarmersFragment"
+        android:label="fragment_all_farmers"
+        tools:layout="@layout/fragment_all_farmers" />
+    <fragment
+        android:id="@+id/addNewFarmerFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFragment"
+        android:label="fragment_add_new_farmer"
+        tools:layout="@layout/fragment_add_new_farmer" />
 
 
 </navigation>
