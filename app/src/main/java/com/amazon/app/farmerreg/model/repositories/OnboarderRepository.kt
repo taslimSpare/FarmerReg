@@ -19,7 +19,6 @@ class OnboarderRepository(application: Application) {
 
 
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val fireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val roomDb: MyAppDatabase = MyAppDatabase.getAppDatabase(application)!!
     var userLiveData = MutableLiveData<UserProfile>().apply { value = UserProfile() }
 
@@ -46,6 +45,7 @@ class OnboarderRepository(application: Application) {
     // delete user from room
     private suspend fun deleteUser() {
         roomDb.userProfileDao().nukeThisTable()
+        roomDb.farmersDao().nukeThisTable()
         mAuth.signOut()
     }
 
