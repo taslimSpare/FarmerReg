@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -36,6 +37,10 @@ class HomeFragment : Fragment() {
         navController = Navigation.findNavController(container!!)
         onboarderVM = ViewModelProviders.of(activity as FragmentActivity).get(OnboarderVM::class.java)
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+
+
+        onboarderVM.getUserProfile()
+        onboarderVM.authLiveData().observe(viewLifecycleOwner, Observer { fragmentHomeBinding.userProfile = it })
 
 
         // onBackPressed
