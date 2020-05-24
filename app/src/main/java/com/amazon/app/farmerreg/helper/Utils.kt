@@ -15,7 +15,7 @@ class Utils {
         edittexts.forEach {
             if(it.text.toString().trim().equals("")) {
                 it.error = Constants.REQUIRED_FIELD
-                if((it.inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) && (it.text.length < 6)) it.error = "Invalid passowrd"
+                if((it.inputType == InputType.TYPE_TEXT_VARIATION_PASSWORD) && (it.text.length < 6)) it.error = Constants.INVALID_PASSWORD
                 res = true
             }
         }

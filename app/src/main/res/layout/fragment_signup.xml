@@ -185,15 +185,15 @@
                 app:layout_constraintStart_toStartOf="@id/tv_big_sign_in"
                 app:layout_constraintEnd_toEndOf="@+id/tv_big_sign_in"
                 app:layout_constraintTop_toBottomOf="@+id/et_password"
-                app:layout_constraintBottom_toTopOf="@+id/switch_to_sign_up"
+                app:layout_constraintBottom_toTopOf="@+id/switch_to_sign_in"
                 tools:ignore="UnusedAttribute" />
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/switch_to_sign_up"
-                android:text="@string/switch_to_sign_up"
+                android:id="@+id/switch_to_sign_in"
+                android:text="@string/switch_to_sign_in"
                 android:textColor="@color/app_dark_green"
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
@@ -204,6 +204,11 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <include
+            layout="@layout/layout_loading"
+            android:id="@+id/progressView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
