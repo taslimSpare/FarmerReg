@@ -1,11 +1,11 @@
-package com.amazon.app.farmerreg.db
+package com.amazon.app.farmerreg.model.roomDB
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.amazon.app.farmerreg.R
-import com.amazon.app.farmerreg.db.pojo.UserProfile
+import com.amazon.app.farmerreg.model.pojo.UserProfile
 
 @Database(version = 1, entities = [UserProfile::class], exportSchema = false)
 abstract class MyAppDatabase : RoomDatabase() {

@@ -2,23 +2,16 @@
     <string name="app_name">FarmerReg</string>
 
 
-    <string name="next">Next</string>
-    <string name="skip">Skip</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in">Sign In</string>
 
     <string name="email">Email</string>
     <string name="name">Name</string>
-    <string name="phone_number">Phone number</string>
     <string name="password">Password</string>
-    <string name="confirm_password">Confirm password</string>
 
-    <string name="forgot_password">Forgot password?</string>
-    <string name="reset_password">Reset password</string>
     <string name="switch_to_sign_up">Don\'t have an account? <b>Sign up</b></string>
     <string name="switch_to_sign_in">Have an account? <b>Sign in</b></string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>
