@@ -18,4 +18,6 @@ class OnboarderVM(application: Application) : AndroidViewModel(application) {
 
     fun getUserProfile() { onboarderRepository.getUserProfile() }
 
+    fun signOut() { onboarderRepository.signOut() }
+
 }

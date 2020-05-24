@@ -30,10 +30,23 @@ class OnboarderRepository(application: Application) {
     }
 
 
+    public fun signOut() {
+        CoroutineScope(IO).launch { deleteUser() }
+    }
+
+
+
 
     // fetch user profile from Room
     private suspend fun fetchUserProfileFromRoom() {
         userLiveData.postValue(roomDb.userProfileDao().getUser()[0])
+    }
+
+
+    // delete user from room
+    private suspend fun deleteUser() {
+        roomDb.userProfileDao().nukeThisTable()
+        mAuth.signOut()
     }
 
 }

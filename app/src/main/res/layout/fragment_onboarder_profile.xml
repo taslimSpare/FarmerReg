@@ -4,6 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragments.OnboarderProfileFragment">
 
+    <data>
+        <variable
+            name="userProfile"
+            type="com.amazon.app.farmerreg.model.pojo.UserProfile" />
+    </data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -73,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_name"
-                android:text="Wura Fahanmi"
+                android:text="@{userProfile.name}"
                 android:textSize="16sp"
                 android:textColor="@color/app_dark_green"
                 android:gravity="center"
@@ -84,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_email"
-                android:text="shoutout2wurah@gmail.com"
+                android:text="@{userProfile.email}"
                 android:textSize="16sp"
                 android:textColor="@color/app_dark_green"
                 android:gravity="center"
@@ -95,7 +102,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="6"
+                android:text="@{userProfile.farmers}"
                 android:gravity="end|bottom"
                 android:id="@+id/tv_number_of_farmers"
                 android:textSize="50sp"
@@ -121,6 +128,9 @@
             <Button
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/signOut"
+                android:clickable="true"
+                android:focusable="true"
                 android:text="@string/sign_out"
                 android:textColor="@color/app_white"
                 android:background="@drawable/dark_green_button_background"
