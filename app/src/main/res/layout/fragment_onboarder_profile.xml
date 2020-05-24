@@ -1,14 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragments.OnboarderProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/app_dark_green">
 
-</FrameLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#A4FFFFFF"
+            android:alpha="0.2"
+            tools:ignore="UnusedAttribute" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/top"
+            android:background="@color/app_dark_green"
+            app:layout_constraintVertical_weight="0.20"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottom">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:alpha="0.2"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="-50dp"
+                android:layout_marginTop="-50dp"
+                android:src="@drawable/auth_header_circle"
+                tools:ignore="ContentDescription,UnusedAttribute" />
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:alpha="0.2"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-50dp"
+                android:layout_marginTop="-70dp"
+                android:layout_marginBottom="-70dp"
+                android:src="@drawable/auth_header_circle"
+                tools:ignore="ContentDescription,UnusedAttribute"/>
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:alpha="0.2"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="-5dp"
+                android:layout_marginBottom="-70dp"
+                android:src="@drawable/auth_header_circle"
+                tools:ignore="ContentDescription,,UnusedAttribute"/>
+
+        </RelativeLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/bottom"
+            android:background="@drawable/auth_content_background"
+            app:layout_constraintVertical_weight="0.80"
+            app:layout_constraintTop_toBottomOf="@+id/top"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_name"
+                android:text="Wura Fahanmi"
+                android:textSize="16sp"
+                android:textColor="@color/app_dark_green"
+                android:gravity="center"
+                android:layout_marginTop="100dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_email"
+                android:text="shoutout2wurah@gmail.com"
+                android:textSize="16sp"
+                android:textColor="@color/app_dark_green"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:gravity="end|bottom"
+                android:id="@+id/tv_number_of_farmers"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_farms"
+                app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_farms"
+                android:gravity="start"
+                android:text="farms"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/tv_number_of_farmers"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tv_number_of_farmers" />
+
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_out"
+                android:textColor="@color/app_white"
+                android:background="@drawable/dark_green_button_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_number_of_farmers"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/v_dpRef"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottom" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/iv_dp"
+            android:src="@drawable/farmer"
+            android:padding="18dp"
+            android:background="@drawable/gray_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/v_dpRef" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="21sp"
+            android:textColor="@color/app_white"
+            android:textStyle="bold"
+            app:layout_constraintVertical_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/iv_dp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
