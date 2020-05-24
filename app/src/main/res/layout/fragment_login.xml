@@ -176,6 +176,9 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <include
+            layout="@layout/layout_loading"
+            android:id="@+id/progressView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

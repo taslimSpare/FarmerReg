@@ -13,5 +13,7 @@ object Constants {
 
     const val SEPARATOR = "___"
 
+    const val REQUIRED_FIELD = "This field is required"
+
 
 }
