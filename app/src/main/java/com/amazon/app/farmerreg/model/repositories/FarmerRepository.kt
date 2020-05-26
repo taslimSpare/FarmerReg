@@ -29,7 +29,7 @@ class FarmerRepository(application: Application) {
 
 
     // push farmer details to FireStore
-    private fun uploadFarmerDetails(farmerProfile: FarmerProfile) {
+    public fun uploadFarmerDetails(farmerProfile: FarmerProfile) {
 
         farmerLivedata.value = ""
 
@@ -46,7 +46,7 @@ class FarmerRepository(application: Application) {
 
 
     // push user details to FireStore
-    private fun downloadAllFarms() {
+    public fun downloadAllFarms() {
 
         farmerLivedata.value = ""
 

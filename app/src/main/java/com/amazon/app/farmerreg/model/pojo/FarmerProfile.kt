@@ -5,11 +5,15 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "farmer")
 data class FarmerProfile(
-    @PrimaryKey(autoGenerate = true)
-    var id: Int = 0,
     var farmerName: String,
     var farmerPhoneNumber: String,
     var farmName: String,
     var farmLocation: String,
-    var farmLat: Int = 0,
-    var farmLong: Int = 0)
+    var farmerImageUrl: String,
+    var farmLat: Long = 0,
+    var farmLong: Long = 0) {
+
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
+
+}
