@@ -1,6 +1,7 @@
 package com.amazon.app.farmerreg.view.viewmodel
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.amazon.app.farmerreg.model.pojo.FarmerProfile
@@ -24,6 +25,11 @@ class FarmerVM(application: Application) : AndroidViewModel(application) {
 
 
     fun downloadAllFarms() { farmerRepository.downloadAllFarms() }
+
+
+    fun uploadFarmerPictureToFirebaseStorage(filePath: Uri) {
+        farmerRepository.uploadFarmerPictureToFirebaseStorage()
+    }
 
 
 }

@@ -102,7 +102,7 @@
         tools:layout="@layout/fragment_farmer_profile" />
     <fragment
         android:id="@+id/addNewFarmer_farm_detailsFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmer_farm_detailsFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFarmDetailsFragment"
         android:label="fragment_add_new_farmer_farm_details"
         tools:layout="@layout/fragment_add_new_farmer_farm_details" >
         <action
@@ -111,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewFarmer_photoFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmer_photoFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerPhotoFragment"
         android:label="fragment_add_new_farmer_photo"
         tools:layout="@layout/fragment_add_new_farmer_photo" >
         <action

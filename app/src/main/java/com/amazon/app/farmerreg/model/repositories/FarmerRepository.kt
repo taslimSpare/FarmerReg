@@ -1,21 +1,21 @@
 package com.amazon.app.farmerreg.model.repositories
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import com.amazon.app.farmerreg.helper.Constants
 import com.amazon.app.farmerreg.model.pojo.FarmerProfile
 import com.amazon.app.farmerreg.model.roomDB.MyAppDatabase
-import com.amazon.app.farmerreg.model.pojo.UserProfile
 import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QueryDocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import java.util.*
 
 
 class FarmerRepository(application: Application) {
@@ -24,6 +24,7 @@ class FarmerRepository(application: Application) {
     private val mAuth: FirebaseAuth = FirebaseAuth.getInstance()
     private val fireStore: FirebaseFirestore = FirebaseFirestore.getInstance()
     private val roomDb: MyAppDatabase = MyAppDatabase.getAppDatabase(application)!!
+    private val storageReference: StorageReference = FirebaseStorage.getInstance().reference
     var farmerLivedata = MutableLiveData<String>().apply { value = "" }
 
 
@@ -43,7 +44,6 @@ class FarmerRepository(application: Application) {
             farmerLivedata.value = ("${Constants.FAILED}${Constants.SEPARATOR}${it.message}")
         }
     }
-
 
     // push user details to FireStore
     public fun downloadAllFarms() {
@@ -68,6 +68,22 @@ class FarmerRepository(application: Application) {
 
     }
 
+
+    public fun uploadFarmerPictureToFirebaseStorage(filePath: Uri) {
+        val sr: StorageReference = storageReference.child("farmer_pictures/" + UUID.randomUUID().toString())
+        val urlTask = sr.putFile(filePath)
+
+        urlTask.addOnSuccessListener {
+            val task: Task<Uri> = sr.downloadUrl
+            task.addOnSuccessListener { farmerLivedata.value = ("${Constants.UPLOAD_USER_DETAILS_SUCCESSFUL}${Constants.SEPARATOR}${it.toString()}") }
+            task.addOnFailureListener { farmerLivedata.value = "${Constants.FAILED}${Constants.SEPARATOR}${it.message}" }
+        }
+
+        urlTask.addOnFailureListener{
+            farmerLivedata.value = "${Constants.FAILED}${Constants.SEPARATOR}${it.message}"
+        }
+
+    }
 
     // save user profile to Room
     private suspend fun saveFarmerToRoom(farmerProfile: FarmerProfile) {

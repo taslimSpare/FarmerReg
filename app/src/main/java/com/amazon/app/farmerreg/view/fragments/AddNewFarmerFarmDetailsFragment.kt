@@ -19,7 +19,7 @@ import com.amazon.app.farmerreg.view.viewmodel.FarmerVM
 /**
  * A simple [Fragment] subclass.
  */
-class AddNewFarmer_farm_detailsFragment : Fragment() {
+class AddNewFarmerFarmDetailsFragment : Fragment() {
 
 
     private lateinit var navController: NavController
