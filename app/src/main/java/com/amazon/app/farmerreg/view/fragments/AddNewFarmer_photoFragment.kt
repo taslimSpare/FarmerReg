@@ -24,17 +24,17 @@ import com.amazon.app.farmerreg.view.viewmodel.FarmerVM
 /**
  * A simple [Fragment] subclass.
  */
-class AddNewFarmerFragment : Fragment() {
+class AddNewFarmer_photoFragment : Fragment() {
 
     private lateinit var navController: NavController
-    private lateinit var fragmentAddNewFarmerFragmentBinding: FragmentAddNewFarmerBinding
+    private lateinit var fragmentAddNewFarmerPhotoBinding: FragmentAddNewFarmerPhotoBinding
     private lateinit var farmerVM: FarmerVM
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         navController = Navigation.findNavController(container!!)
-        fragmentAddNewFarmerFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_new_farmer, container, false)
+        fragmentAddNewFarmerFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_new_farmer_photo, container, false)
         farmerVM = ViewModelProviders.of(activity as FragmentActivity).get(FarmerVM::class.java)
 
 

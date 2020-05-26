@@ -76,9 +76,9 @@
         tools:layout="@layout/fragment_all_farmers" />
     <fragment
         android:id="@+id/addNewFarmerFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmer_farmer_detailsFragment"
         android:label="fragment_add_new_farmer"
-        tools:layout="@layout/fragment_add_new_farmer" >
+        tools:layout="@layout/fragment_add_new_farmer_farmer_details" >
         <action
             android:id="@+id/action_addNewFarmerFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
