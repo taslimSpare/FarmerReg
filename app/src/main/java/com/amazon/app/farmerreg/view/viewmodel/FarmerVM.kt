@@ -28,7 +28,7 @@ class FarmerVM(application: Application) : AndroidViewModel(application) {
 
 
     fun uploadFarmerPictureToFirebaseStorage(filePath: Uri) {
-        farmerRepository.uploadFarmerPictureToFirebaseStorage()
+        farmerRepository.uploadFarmerPictureToFirebaseStorage(filePath)
     }
 
 
