@@ -91,6 +91,8 @@ class FarmerRepository(application: Application) {
         farmerLivedata.postValue("")
 
         roomDb.farmersDao().createFarmer(farmerProfile)
+        roomDb.userProfileDao().incrementFarmer()
+
         farmerLivedata.postValue(Constants.SAVE_USER_TO_ROOM_SUCCESSFUL)
     }
 

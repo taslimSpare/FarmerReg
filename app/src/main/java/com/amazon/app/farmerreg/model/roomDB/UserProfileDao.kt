@@ -16,6 +16,9 @@ interface UserProfileDao {
     @Query("SELECT * FROM profile ORDER BY name ASC")
     fun getUser() : List<UserProfile>
 
+    @Query("UPDATE farmer SET farmer = farmer + 1 WHERE id = 0")
+    fun incrementFarmer()
+
     @Query("DELETE from profile")
     fun nukeThisTable()
 

@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.amazon.app.farmerreg.R
+import com.amazon.app.farmerreg.model.pojo.FarmerProfile
 import com.amazon.app.farmerreg.model.pojo.UserProfile
 
-@Database(version = 1, entities = [UserProfile::class, FarmersDao::class], exportSchema = false)
+@Database(version = 1, entities = [UserProfile::class, FarmerProfile::class], exportSchema = false)
 abstract class MyAppDatabase : RoomDatabase() {
 
     abstract fun userProfileDao(): UserProfileDao
@@ -17,18 +18,11 @@ abstract class MyAppDatabase : RoomDatabase() {
         private var sInstance: MyAppDatabase? = null
 
         fun getAppDatabase(context: Context): MyAppDatabase? {
-            if (sInstance == null) {
-                synchronized(MyAppDatabase::class) {
-                    sInstance = buildDatabase(context)
-                }
-            }
+            if (sInstance == null) { synchronized(MyAppDatabase::class) { sInstance = buildDatabase(context) } }
             return sInstance
         }
 
-        private fun buildDatabase(context: Context): MyAppDatabase {
-            return Room.databaseBuilder(
-                context.applicationContext,
-                MyAppDatabase::class.java, context.getString(R.string.app_name)).build()
-        }
+        private fun buildDatabase(context: Context): MyAppDatabase { return Room.databaseBuilder(context.applicationContext, MyAppDatabase::class.java, context.getString(R.string.app_name)).build() }
+
     }
 }
