@@ -13,7 +13,7 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:id="@+id/top"
+            android:id="@+id/tv_back"
             android:drawableStart="@drawable/back"
             android:drawablePadding="15dp"
             android:background="@color/app_dark_green"
@@ -30,7 +30,7 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
             android:id="@+id/bottom"
             android:background="@drawable/auth_content_background"
             app:layout_constraintVertical_weight="0.90"
-            app:layout_constraintTop_toBottomOf="@+id/top"
+            app:layout_constraintTop_toBottomOf="@+id/tv_back"
             app:layout_constraintBottom_toBottomOf="parent">
 
 
@@ -72,7 +72,7 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_big_sign_in"
+                android:id="@+id/tv_caption"
                 android:text="Farm details"
                 android:textColor="@color/app_dark_green"
                 android:textStyle="bold"
@@ -87,28 +87,28 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_email"
+                android:id="@+id/tv_farmName"
                 android:text="Farm name"
                 android:textColor="@color/app_dark_green"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="@+id/tv_big_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/tv_big_sign_in"
-                app:layout_constraintBottom_toTopOf="@+id/et_email"/>
+                app:layout_constraintStart_toStartOf="@+id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@+id/tv_caption"
+                app:layout_constraintBottom_toTopOf="@+id/et_farmName"/>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:id="@+id/et_email"
+                android:id="@+id/et_farmName"
                 android:padding="7dp"
                 android:singleLine="true"
                 android:textColor="@color/app_black"
                 android:inputType="textPersonName"
                 android:background="@drawable/auth_edittext_box"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@id/tv_big_sign_in"
-                app:layout_constraintEnd_toEndOf="@id/tv_big_sign_in"
-                app:layout_constraintTop_toBottomOf="@id/tv_email"
-                app:layout_constraintBottom_toTopOf="@+id/tv_password"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_farmName"
+                app:layout_constraintBottom_toTopOf="@+id/tv_farm_location"
                 android:importantForAutofill="no"
                 tools:ignore="LabelFor,UnusedAttribute" />
 
@@ -116,18 +116,18 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_password"
+                android:id="@+id/tv_farm_location"
                 android:text="Farmer location"
                 android:textColor="@color/app_dark_green"
                 android:layout_marginTop="15dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_big_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/et_email"
-                app:layout_constraintBottom_toTopOf="@+id/et_password"/>
+                app:layout_constraintStart_toStartOf="@+id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@+id/et_farmName"
+                app:layout_constraintBottom_toTopOf="@+id/et_farm_location"/>
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:id="@+id/et_password"
+                android:id="@+id/et_farm_location"
                 android:hint="Lagos, Nigeria"
                 android:paddingStart="15dp"
                 android:paddingEnd="0dp"
@@ -136,9 +136,9 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
                 android:singleLine="true"
                 android:background="@drawable/auth_edittext_box"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@id/tv_big_sign_in"
-                app:layout_constraintEnd_toEndOf="@id/tv_big_sign_in"
-                app:layout_constraintTop_toBottomOf="@id/tv_password"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@id/tv_farm_location"
                 app:layout_constraintBottom_toTopOf="@+id/tv_coordinates"
                 android:importantForAutofill="no"
                 tools:ignore="LabelFor,UnusedAttribute" />
@@ -151,8 +151,8 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
                 android:text="Farm coordinates"
                 android:textColor="@color/app_dark_green"
                 android:layout_marginTop="15dp"
-                app:layout_constraintStart_toStartOf="@+id/tv_big_sign_in"
-                app:layout_constraintTop_toBottomOf="@+id/et_password"
+                app:layout_constraintStart_toStartOf="@+id/tv_caption"
+                app:layout_constraintTop_toBottomOf="@+id/et_farm_location"
                 app:layout_constraintBottom_toTopOf="@+id/et_coordinates"/>
 
             <TextView
@@ -168,10 +168,10 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
                 android:singleLine="true"
                 android:background="@drawable/auth_edittext_box"
                 android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@id/tv_big_sign_in"
-                app:layout_constraintEnd_toEndOf="@id/tv_big_sign_in"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintEnd_toEndOf="@id/tv_caption"
                 app:layout_constraintTop_toBottomOf="@id/tv_coordinates"
-                app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+                app:layout_constraintBottom_toTopOf="@+id/btn_next"
                 android:importantForAutofill="no"
                 tools:ignore="LabelFor,UnusedAttribute" />
 
@@ -181,15 +181,15 @@ tools:context=".view.fragments.AddNewFarmer_farm_detailsFragment">
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/dark_green_button_background"
-                android:id="@+id/btn_sign_in"
+                android:id="@+id/btn_next"
                 android:layout_marginStart="70dp"
                 android:layout_marginEnd="70dp"
                 android:layout_marginTop="60dp"
                 android:text="Next"
                 android:textColor="@color/app_white"
                 android:textAllCaps="false"
-                app:layout_constraintStart_toStartOf="@id/tv_big_sign_in"
-                app:layout_constraintEnd_toEndOf="@+id/tv_big_sign_in"
+                app:layout_constraintStart_toStartOf="@id/tv_caption"
+                app:layout_constraintEnd_toEndOf="@+id/tv_caption"
                 app:layout_constraintTop_toBottomOf="@+id/et_coordinates"
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="UnusedAttribute" />

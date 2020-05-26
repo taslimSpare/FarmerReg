@@ -14,6 +14,8 @@ class FarmerVM(application: Application) : AndroidViewModel(application) {
 
     private val farmerRepository: FarmerRepository = FarmerRepository(application)
 
+    val farmerProfile: FarmerProfile = FarmerProfile("", "", "", "", "", 0, 0)
+
 
     fun farmerLivedata() : LiveData<String> { return farmerRepository.farmerLivedata }
 

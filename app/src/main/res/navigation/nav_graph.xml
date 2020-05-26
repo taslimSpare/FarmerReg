@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewFarmerFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmer_farmer_detailsFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFarmerDetailsFragment"
         android:label="fragment_add_new_farmer"
         tools:layout="@layout/fragment_add_new_farmer_farmer_details" >
         <action
