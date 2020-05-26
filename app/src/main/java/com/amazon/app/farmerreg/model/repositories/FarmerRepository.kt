@@ -26,6 +26,7 @@ class FarmerRepository(application: Application) {
     private val roomDb: MyAppDatabase = MyAppDatabase.getAppDatabase(application)!!
     private val storageReference: StorageReference = FirebaseStorage.getInstance().reference
     var farmerLivedata = MutableLiveData<String>().apply { value = "" }
+    var allfarmersLivedata = MutableLiveData<List<FarmerProfile>>().apply { value = listOf() }
 
 
 
@@ -46,7 +47,7 @@ class FarmerRepository(application: Application) {
     }
 
     // push user details to FireStore
-    public fun downloadAllFarms() {
+    public fun downloadAllFarmsFromFirebase() {
 
         farmerLivedata.value = ""
 
@@ -66,6 +67,13 @@ class FarmerRepository(application: Application) {
         }
         task.addOnFailureListener { farmerLivedata.value = ("${Constants.FAILED}${Constants.SEPARATOR}${it.message}") }
 
+    }
+
+
+    public fun downloadAllFarmsFromRoom() {
+        CoroutineScope(IO).launch {
+            getFarmersFromRoom()
+        }
     }
 
 
@@ -94,6 +102,13 @@ class FarmerRepository(application: Application) {
         roomDb.userProfileDao().incrementFarmer()
 
         farmerLivedata.postValue(Constants.SAVE_USER_TO_ROOM_SUCCESSFUL)
+    }
+
+
+    // save user profile to Room
+    private suspend fun getFarmersFromRoom() {
+        farmerLivedata.postValue("")
+        allfarmersLivedata.postValue(roomDb.farmersDao().getFarmers())
     }
 
 }
