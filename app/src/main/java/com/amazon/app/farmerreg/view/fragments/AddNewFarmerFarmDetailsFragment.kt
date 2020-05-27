@@ -47,12 +47,12 @@ class AddNewFarmerFarmDetailsFragment : Fragment() {
         fragmentAddNewFarmerFarmDetailsBinding.btnNext.setOnClickListener {
             if(!Utils().errorfyEdittexts(
                     fragmentAddNewFarmerFarmDetailsBinding.etFarmName,
-                    fragmentAddNewFarmerFarmDetailsBinding.etFarmLocation) && !Utils().errorfyTextViews(fragmentAddNewFarmerFarmDetailsBinding.etCoordinates)) {
+                    fragmentAddNewFarmerFarmDetailsBinding.etFarmLocation)) {
 
                 farmerVM.farmerProfile.farmName = fragmentAddNewFarmerFarmDetailsBinding.etFarmName.text.toString().trim()
                 farmerVM.farmerProfile.farmLocation = fragmentAddNewFarmerFarmDetailsBinding.etFarmLocation.text.toString().trim()
-                farmerVM.farmerProfile.farmLat = fragmentAddNewFarmerFarmDetailsBinding.etCoordinates.text.toString().trim().split(",")[0].toLong()
-                farmerVM.farmerProfile.farmLong = fragmentAddNewFarmerFarmDetailsBinding.etCoordinates.text.toString().trim().split(",")[1].toLong()
+                farmerVM.farmerProfile.farmLat = 646
+                farmerVM.farmerProfile.farmLong = 7824
 
                 navController.navigate(R.id.action_addNewFarmer_farm_detailsFragment_to_addNewFarmer_photoFragment)
             }
