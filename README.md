@@ -2,8 +2,8 @@
 
 Technologies: 
 
-MVVM
-Kotlin Coroutines
-Navigation component
-Data binding
+MVVM <br />
+Kotlin Coroutines <br />
+Navigation component <br />
+Data binding <br />
 LiveData
