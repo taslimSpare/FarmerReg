@@ -73,12 +73,55 @@
         android:id="@+id/allFarmersFragment"
         android:name="com.amazon.app.farmerreg.view.fragments.AllFarmersFragment"
         android:label="fragment_all_farmers"
-        tools:layout="@layout/fragment_all_farmers" />
+        tools:layout="@layout/fragment_all_farmers" >
+        <action
+            android:id="@+id/action_allFarmersFragment_to_farmerProfileFragment"
+            app:destination="@id/farmerProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addNewFarmerFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFarmerDetailsFragment"
         android:label="fragment_add_new_farmer"
-        tools:layout="@layout/fragment_add_new_farmer" />
+        tools:layout="@layout/fragment_add_new_farmer_farmer_details" >
+        <action
+            android:id="@+id/action_addNewFarmerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_addNewFarmerFragment_to_addNewFarmer_farm_detailsFragment"
+            app:destination="@id/addNewFarmer_farm_detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/coordinatesFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.CoordinatesFragment"
+        android:label="fragment_coordinates"
+        tools:layout="@layout/fragment_coordinates" />
+    <fragment
+        android:id="@+id/farmerProfileFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.FarmerProfileFragment"
+        android:label="fragment_farmer_profile"
+        tools:layout="@layout/fragment_farmer_profile" >
+        <action
+            android:id="@+id/action_farmerProfileFragment_to_allFarmersFragment"
+            app:destination="@id/allFarmersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewFarmer_farm_detailsFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFarmDetailsFragment"
+        android:label="fragment_add_new_farmer_farm_details"
+        tools:layout="@layout/fragment_add_new_farmer_farm_details" >
+        <action
+            android:id="@+id/action_addNewFarmer_farm_detailsFragment_to_addNewFarmer_photoFragment"
+            app:destination="@id/addNewFarmer_photoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewFarmer_photoFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerPhotoFragment"
+        android:label="fragment_add_new_farmer_photo"
+        tools:layout="@layout/fragment_add_new_farmer_photo" >
+        <action
+            android:id="@+id/action_addNewFarmer_photoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
 
 </navigation>

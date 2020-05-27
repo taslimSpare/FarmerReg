@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
 
         // when done/sign-in button is clicked
         fragmentLoginBinding.btnSignIn.setOnClickListener {
-            if(!(Utils().errorfy(fragmentLoginBinding.etEmail, fragmentLoginBinding.etPassword))) {
+            if(!(Utils().errorfyEdittexts(fragmentLoginBinding.etEmail, fragmentLoginBinding.etPassword))) {
                 showProgressBar()
                 authVM.logIn(fragmentLoginBinding.etEmail.text.toString().trim(), fragmentLoginBinding.etPassword.text.toString().trim())
                 observe()

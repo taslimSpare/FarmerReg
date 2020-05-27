@@ -55,7 +55,7 @@ class SignupFragment : Fragment() {
 
         // when done/sign-in button is clicked
         fragmentSignupBinding.btnSignUp.setOnClickListener {
-            if(!(Utils().errorfy(fragmentSignupBinding.etName, fragmentSignupBinding.etEmail, fragmentSignupBinding.etPassword))) {
+            if(!(Utils().errorfyEdittexts(fragmentSignupBinding.etName, fragmentSignupBinding.etEmail, fragmentSignupBinding.etPassword))) {
                 showProgressBar()
                 authVM.signUp(UserProfile(0, fragmentSignupBinding.etName.text.toString().trim(), fragmentSignupBinding.etEmail.text.toString().trim(), 0), fragmentSignupBinding.etPassword.text.toString().trim())
                 observe()

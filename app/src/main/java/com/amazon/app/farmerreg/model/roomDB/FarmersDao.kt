@@ -4,22 +4,20 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.amazon.app.farmerreg.model.pojo.FarmerProfile
 import com.amazon.app.farmerreg.model.pojo.UserProfile
 
 
 @Dao
-interface UserProfileDao {
+interface FarmersDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun createUser(userProfile: UserProfile)
+    suspend fun createFarmer(farmerProfile: FarmerProfile)
 
-    @Query("SELECT * FROM profile ORDER BY name ASC")
-    fun getUser() : List<UserProfile>
+    @Query("SELECT * FROM farmer ORDER BY farmerName ASC")
+    fun getFarmers() : List<FarmerProfile>
 
-    @Query("UPDATE farmer SET farmer = farmer + 1 WHERE id = 0")
-    fun incrementFarmer()
-
-    @Query("DELETE from profile")
+    @Query("DELETE from farmer")
     fun nukeThisTable()
 
 }

@@ -20,6 +20,7 @@ import com.amazon.app.farmerreg.R
 import com.amazon.app.farmerreg.databinding.FragmentHomeBinding
 import com.amazon.app.farmerreg.databinding.FragmentOnboarderProfileBinding
 import com.amazon.app.farmerreg.view.ExitActivity
+import com.amazon.app.farmerreg.view.viewmodel.FarmerVM
 import com.amazon.app.farmerreg.view.viewmodel.OnboarderVM
 
 /**
@@ -30,18 +31,21 @@ class HomeFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var fragmentHomeBinding: FragmentHomeBinding
     private lateinit var onboarderVM: OnboarderVM
+    private lateinit var farmerVM: FarmerVM
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         navController = Navigation.findNavController(container!!)
         onboarderVM = ViewModelProviders.of(activity as FragmentActivity).get(OnboarderVM::class.java)
+        farmerVM = ViewModelProviders.of(activity as FragmentActivity).get(FarmerVM::class.java)
         fragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
 
         onboarderVM.getUserProfile()
         onboarderVM.authLiveData().observe(viewLifecycleOwner, Observer { fragmentHomeBinding.userProfile = it })
 
+        farmerVM.downloadAllFarmsFromFirebase()
 
         // onBackPressed
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
