@@ -1,14 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.fragments.FarmerProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <data>
+        <variable
+            name="farmerProfile"
+            type="com.amazon.app.farmerreg.model.pojo.FarmerProfile" />
+    </data>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/app_dark_green">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/ib_back"
+            android:drawableStart="@drawable/back"
+            android:drawablePadding="15dp"
+            android:background="@color/app_dark_green"
+            app:layout_constraintVertical_weight="0.10"
+            android:padding="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"/>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/bottom"
+            android:background="@drawable/auth_content_background"
+            app:layout_constraintVertical_weight="0.90"
+            app:layout_constraintTop_toBottomOf="@+id/ib_back"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:id="@+id/iv_profileImage"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/gray_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_farmer_information"
+                        android:text="Farmer information"
+                        android:textColor="@color/app_dark_green"
+                        android:textStyle="bold"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_profileImage" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tv_farmerName"
+                        android:text="@{farmerProfile.farmerName}"
+                        android:gravity="center|start"
+                        android:textSize="14sp"
+                        android:textColor="@color/app_black"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/auth_edittext_box"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farmer_information" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tv_farmerPhoneNumber"
+                        android:gravity="center|start"
+                        android:text="@{farmerProfile.farmerPhoneNumber}"
+                        android:textSize="14sp"
+                        android:textColor="@color/app_black"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/auth_edittext_box"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farmerName" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_farm_information"
+                        android:text="Farm information"
+                        android:textColor="@color/app_dark_green"
+                        android:textStyle="bold"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="50dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farmerPhoneNumber" />
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tv_farmName"
+                        android:gravity="center|start"
+                        android:text="@{farmerProfile.farmName}"
+                        android:textSize="14sp"
+                        android:textColor="@color/app_black"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/auth_edittext_box"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farm_information" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tv_farmLocation"
+                        android:gravity="center|start"
+                        android:text="@{farmerProfile.farmLocation}"
+                        android:textSize="14sp"
+                        android:textColor="@color/app_black"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/auth_edittext_box"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farmName" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/tv_farmCoordinates"
+                        android:gravity="center|start"
+                        android:text="@{farmerProfile.farmLat + `, `+ farmerProfile.farmLong}"
+                        android:textSize="14sp"
+                        android:textColor="@color/app_black"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/auth_edittext_box"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_farmLocation"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            layout="@layout/layout_loading"
+            android:id="@+id/progressView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

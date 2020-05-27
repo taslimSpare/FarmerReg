@@ -99,7 +99,11 @@
         android:id="@+id/farmerProfileFragment"
         android:name="com.amazon.app.farmerreg.view.fragments.FarmerProfileFragment"
         android:label="fragment_farmer_profile"
-        tools:layout="@layout/fragment_farmer_profile" />
+        tools:layout="@layout/fragment_farmer_profile" >
+        <action
+            android:id="@+id/action_farmerProfileFragment_to_allFarmersFragment"
+            app:destination="@id/allFarmersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addNewFarmer_farm_detailsFragment"
         android:name="com.amazon.app.farmerreg.view.fragments.AddNewFarmerFarmDetailsFragment"

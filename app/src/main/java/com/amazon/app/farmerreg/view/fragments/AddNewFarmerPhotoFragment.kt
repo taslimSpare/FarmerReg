@@ -23,6 +23,7 @@ import com.amazon.app.farmerreg.databinding.FragmentAddNewFarmerPhotoBinding
 import com.amazon.app.farmerreg.helper.Constants
 import com.amazon.app.farmerreg.helper.Utils
 import com.amazon.app.farmerreg.view.viewmodel.FarmerVM
+import com.bumptech.glide.Glide
 import java.io.IOException
 
 /**
@@ -85,6 +86,12 @@ class AddNewFarmerPhotoFragment : Fragment() {
                 }
                 it.contains(Constants.UPLOAD_USER_DETAILS_SUCCESSFUL) -> {
                     imageUrl = it.split(Constants.SEPARATOR)[1]
+                    Glide
+                        .with(requireActivity().applicationContext)
+                        .load(bitmapFromUri)
+                        .centerCrop()
+                        .placeholder(R.drawable.farmer)
+                        .into(fragmentAddNewFarmerPhotoBinding.ibPhoto)
                     hideProgressBar("")
                 }
                 it.contains(Constants.FAILED) -> {
