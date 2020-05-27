@@ -92,9 +92,9 @@
     </fragment>
     <fragment
         android:id="@+id/coordinatesFragment"
-        android:name="com.amazon.app.farmerreg.view.fragments.CoordinatesFragment"
+        android:name="com.amazon.app.farmerreg.view.fragments.MapFragment"
         android:label="fragment_coordinates"
-        tools:layout="@layout/fragment_coordinates" />
+        tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/farmerProfileFragment"
         android:name="com.amazon.app.farmerreg.view.fragments.FarmerProfileFragment"
