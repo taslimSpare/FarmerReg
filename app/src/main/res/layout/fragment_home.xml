@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{userProfile.farmers}"
+                android:text="@{Integer.toString(userProfile.farmers)}"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#FF0000"
